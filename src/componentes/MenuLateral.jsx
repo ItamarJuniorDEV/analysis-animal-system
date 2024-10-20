@@ -1,6 +1,6 @@
 // src/componentes/MenuLateral.jsx
 import React from 'react';
-import { FaHome } from 'react-icons/fa';
+import { FaHome, FaSpeakap } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 const MenuItem = ({ to, icon, children }) => {
@@ -25,6 +25,7 @@ export default function MenuLateral() {
     <aside className="bg-primary-800 text-white w-64 min-h-screen p-4">
       <nav className="mt-8 space-y-2">
         <MenuItem to="/" icon={<FaHome />}>Início</MenuItem>
+        <MenuItem to="/chat" icon={<FaSpeakap />}>Chat</MenuItem>
       </nav>
     </aside>
   );

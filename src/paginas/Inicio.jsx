@@ -1,7 +1,7 @@
-import React from 'react';
+import RenderHTMLInIframe from '../componentes/RenderHtmlInIframe';
 
 export default function Inicio() {
   return (
-    <>Hello World</>
+    <RenderHTMLInIframe />
   );
 }

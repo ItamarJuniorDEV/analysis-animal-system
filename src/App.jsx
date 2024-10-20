@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Layout from './componentes/Layout';
 import Notificacao from './componentes/Notificacao';
@@ -9,6 +9,7 @@ import { ThemeProvider } from './contextos/ThemeContext';
 
 const Login = lazy(() => import('./paginas/Login'));
 const Inicio = lazy(() => import('./paginas/Inicio'));
+const Chat = lazy(() => import('./paginas/Chat'));
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
                   <Route index element={<Inicio />} />
+                </Route>
+                <Route path="/chat" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+                  <Route index element={<Chat />} />
                 </Route>
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
